@@ -26,7 +26,7 @@ public class WordDAOImpl implements WordDAO {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Query<Word> theQuery = currentSession.createQuery("from Word", Word.class);
+		Query<Word> theQuery = currentSession.createQuery("from Word order by english", Word.class);
 		
 		List<Word> words = theQuery.getResultList();
 		
